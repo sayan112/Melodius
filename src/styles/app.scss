@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+
+
+     margin: 0;
+     border: 0;
+        box-sizing: border-box;
+    /* font-family: 'Dancing Script', cursive;
+   */
+    font-family: 'Secular One', sans-serif;
+}
+h1,h2,h3,p {
+    color: rgb(85, 82, 82)
+}
+// import all scss files right here :)
+@import "./Player.scss";
+@import "./song.scss";
+@import "./library.scss";
+ @import "./nav.scss";
