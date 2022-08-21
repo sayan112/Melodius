@@ -7,6 +7,9 @@
     height: 100%;
     overflow: scroll;
     box-shadow: 2px 2px 50px rgb(204, 208, 239);
+    transform:translateX(-100%);
+     opacity: 0;
+     transition: all 0.3s ease;
 }
 .library-song {
     display: flex;
@@ -46,4 +49,13 @@
 h3,h4 {
     font-weight: 200;
     color:rgb(95, 95, 95)
+}
+
+.selected  {
+    background: rgb(189, 212, 252);
+}
+.active-library {
+transform: translateX(0%);
+opacity: 1;
+
 }

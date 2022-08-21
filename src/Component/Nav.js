@@ -1,14 +1,21 @@
 import React from 'react'
  
 
-const Nav = () => {
+const Nav = ({librarystatus, setlibraystatus}) => {
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <p>Melody is everything ... 🎶🎶</p>
 
-      <button>Library</button>
+      <button
+        onClick={() => {
+          setlibraystatus(!librarystatus);
+          console.log("hyu");
+        }}
+      >
+        Library 📚
+      </button>
     </div>
   );
-}
+};
 
 export default Nav

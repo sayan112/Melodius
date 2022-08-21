@@ -1,6 +1,23 @@
 .navbar {
+     min-height: 10vh;
     display: flex;
     align-items: center;
-     justify-content: center;
+     justify-content: space-around;
      
+}
+
+.navbar p {
+    font-size: x-large;
+}
+
+.navbar button {
+    font-size: x-large;
+     border-radius: 10px;
+     background-color: rgb(202, 202, 229);
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      &:hover{
+        background-color: aliceblue;
+      }
+      cursor: pointer;
 }
