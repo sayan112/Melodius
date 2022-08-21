@@ -40,6 +40,9 @@ const App = () => {
         isplaysong={isplaysong}
         realTime={realTime}
         setRealTime={setRealTime}
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+          setSongs={setSongs}
       />
       <Library
         songs={songs}

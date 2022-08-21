@@ -1,7 +1,8 @@
-import React from 'react'
+import React  from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  import { faPlayCircle , faBackward , faForward, faPauseCircle } from '@fortawesome/free-solid-svg-icons'
 import {  useState } from 'react'
+import { useEffect } from 'react'
 
 
 export const Player = ({
@@ -11,7 +12,29 @@ export const Player = ({
   audioref,
   realTime,
   setRealTime,
+  songs,
+  setCurrentSong,
+  setSongs,
 }) => {
+  // useeffect to update the whole song array
+
+  useEffect(() => {
+    const activesong = songs.map((song) => {
+      if (song.id === currentSong.id) {
+        return {
+          ...song,
+          active: true,
+        };
+      } else {
+        return {
+          ...song,
+          active: false,
+        };
+      }
+    });
+    setSongs(activesong);
+  }, [currentSong]);
+
   // to grab any html elem use always "useref"
 
   // const playSong = () => {
@@ -42,6 +65,21 @@ export const Player = ({
     setRealTime({ ...realTime, currentTime: e.target.value });
   };
 
+  const skiptrackhandeler = (direction) => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    console.log(currentIndex);
+    if (direction === "skip-forword") {
+      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    }
+    if (direction === "skip-back") {
+      if (currentIndex - 1 === -1) {
+        setCurrentSong(songs[songs.length - 1]);
+        return;
+      }
+      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+    }
+  };
+
   return (
     <div className="player">
       <div className="time-control">
@@ -56,13 +94,21 @@ export const Player = ({
         <p> {getTime(realTime.durationSong)} </p>
       </div>
       <div className="play-control">
-        <FontAwesomeIcon icon={faBackward} size="2x" />
+        <FontAwesomeIcon
+          onClick={() => skiptrackhandeler("skip-back")}
+          icon={faBackward}
+          size="2x"
+        />
         <FontAwesomeIcon
           icon={!isplaysong ? faPlayCircle : faPauseCircle}
           onClick={playSong}
           size="2x"
         />
-        <FontAwesomeIcon icon={faForward} size="2x" />
+        <FontAwesomeIcon
+          onClick={() => skiptrackhandeler("skip-forword")}
+          icon={faForward}
+          size="2x"
+        />
       </div>
     </div>
   );
