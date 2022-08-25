@@ -1,4 +1,5 @@
 .navbar {
+  margin-left: 24rem;
      min-height: 10vh;
     display: flex;
     align-items: center;
@@ -13,11 +14,14 @@
 .navbar button {
     font-size: x-large;
      border-radius: 10px;
-     background-color: rgb(202, 202, 229);
+      font-weight: 200;
+     background-color: rgb(196, 255, 173);
       padding: 0.5rem;
       transition: all 0.3s ease;
       &:hover{
+         color: rgb(93, 210, 108);
         background-color: aliceblue;
       }
       cursor: pointer;
 }
+

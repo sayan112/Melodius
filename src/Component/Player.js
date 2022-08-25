@@ -1,7 +1,6 @@
 import React  from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  import { faPlayCircle , faBackward , faForward, faPauseCircle } from '@fortawesome/free-solid-svg-icons'
-import {  useState } from 'react'
 import { useEffect } from 'react'
 
 

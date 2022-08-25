@@ -7,12 +7,33 @@
      margin: 0;
      border: 0;
         box-sizing: border-box;
+       
     /* font-family: 'Dancing Script', cursive;
    */
     font-family: 'Secular One', sans-serif;
+
+}
+.App{
+    background: linear-gradient(-45deg, #ee7752, #a6f966, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 h1,h2,h3,p {
-    color: rgb(85, 82, 82)
+    color: rgba(82, 81, 81, 0.534)
 }
 // import all scss files right here :)
 @import "./Player.scss";

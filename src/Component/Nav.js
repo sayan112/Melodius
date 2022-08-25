@@ -9,10 +9,9 @@ const Nav = ({librarystatus, setlibraystatus}) => {
       <button
         onClick={() => {
           setlibraystatus(!librarystatus);
-          console.log("hyu");
         }}
-      >
-        Library 📚
+      > Library 📚
+       
       </button>
     </div>
   );
